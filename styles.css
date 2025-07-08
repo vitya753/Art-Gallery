@@ -199,6 +199,11 @@ footer a:hover {
     .dropdown-content button {
         width: clamp(15px, 15vw, 110px); 
     }
+
+    .gallery img {
+        max-width: 500px;
+        height: auto;
+    }
 }
 @media (max-width: 439px) {
     .dropdown-content button {
