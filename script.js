@@ -1,4 +1,4 @@
-// Автоматично визначаємо розміри та присвоюємо категорії
+
 document.querySelectorAll('.paintings').forEach(figure => {
   const sizeText = figure.querySelector('.size').textContent; // наприклад, "95x75"
   const [width, height] = sizeText.split('x').map(Number);
@@ -13,10 +13,10 @@ document.querySelectorAll('.paintings').forEach(figure => {
     sizeCategory = 'small';
   }
 
-  figure.dataset.size = sizeCategory; // додаємо data-size
+  figure.dataset.size = sizeCategory; 
 });
 
-// Функція для фільтрації картин
+
 function filterPaintings(size) {
   const paintings = document.querySelectorAll('.paintings');
   paintings.forEach(p => {
@@ -29,7 +29,7 @@ function filterPaintings(size) {
   });
 }
 
-// Кнопки фільтрації
+
 const buttons = {
   all: document.getElementById('btnAll'),
   big: document.getElementById('btnBig'),
@@ -37,7 +37,7 @@ const buttons = {
   small: document.getElementById('btnSmall')
 };
 
-// Додаємо слухачів на кнопки
+
 buttons.all.addEventListener('click', () => filterPaintings('all'));
 buttons.big.addEventListener('click', () => filterPaintings('big'));
 buttons.medium.addEventListener('click', () => filterPaintings('medium'));
@@ -131,16 +131,22 @@ document.querySelectorAll('.price').forEach(element => {
 const btnContent = document.querySelectorAll('.dropdown-content button');
 const btnFavorites = document.getElementById('showFavoritesBtn');
 
-// Об'єднуємо кнопки в один масив
+
 const allButtons = [...btnContent, btnFavorites];
 
 allButtons.forEach(button => {
   button.addEventListener('click', () => {
-    // Знімаємо active з усіх кнопок
+
     allButtons.forEach(btn => btn.classList.remove('active'));
 
-    // Додаємо active тільки до натиснутої
+
     button.classList.add('active');
   });
 });
 
+
+gtag('event', 'like_button_click', {
+  'event_category': 'Button',
+  'event_label': 'Like Button',
+  'value': 1
+}); 
