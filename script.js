@@ -143,10 +143,3 @@ allButtons.forEach(button => {
     button.classList.add('active');
   });
 });
-
-
-gtag('event', 'like_button_click', {
-  'event_category': 'Button',
-  'event_label': 'Like Button',
-  'value': 1
-}); 
