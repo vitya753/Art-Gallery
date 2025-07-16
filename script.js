@@ -1,6 +1,6 @@
 
 document.querySelectorAll('.paintings').forEach(figure => {
-  const sizeText = figure.querySelector('.size').textContent; // наприклад, "95x75"
+  const sizeText = figure.querySelector('.size').textContent;
   const [width, height] = sizeText.split('x').map(Number);
   const area = width + height;
 
@@ -42,11 +42,6 @@ buttons.all.addEventListener('click', () => filterPaintings('all'));
 buttons.big.addEventListener('click', () => filterPaintings('big'));
 buttons.medium.addEventListener('click', () => filterPaintings('medium'));
 buttons.small.addEventListener('click', () => filterPaintings('small'));
-
-
-
-
-
 
 
 
